@@ -1,0 +1,513 @@
+/* || RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+/* || FONTS */
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/hanken-grotesk-v11-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/hanken-grotesk-v11-latin-700.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/hanken-grotesk-v11-latin-800.woff2") format("woff2");
+}
+
+/* || VARIABLES */
+/* CHANGE THE DATA BELOW AS NEEDED */
+:root {
+  /* FONTS */
+  --FF: "Hanken Grotesk", sans-serif;
+  --FS: 1rem;
+
+  /* COLORS */
+  --BGCOLOR: hsl(221, 100%, 96%);
+  --BGCOLOR-SUMMARY: #fff;
+  --BGCOLOR-CARD-AFTER: #fff;
+  --BGCOLOR-SUMMARY-LIST-1: hsla(0, 100%, 67%, 0.05);
+  --BGCOLOR-SUMMARY-LIST-2: hsla(39, 100%, 56%, 0.05);
+  --BGCOLOR-SUMMARY-LIST-3: hsla(166, 100%, 37%, 0.05);
+  --BGCOLOR-SUMMARY-LIST-4: hsla(234, 85%, 45%, 0.05);
+  --BGCOLOR-SUMMARY-CTA: hsl(224, 30%, 27%);
+  --FONT-COLOR: #000;
+  --FONT-COLOR-CARD-TITLE: hsl(241, 100%, 89%);
+  --FONT-COLOR-CARD-RATING: #fff;
+  --FONT-COLOR-CARD-SPAN: hsl(241, 100%, 89%);
+  --FONT-COLOR-CARD-PERFORMANCE: #fff;
+  --FONT-COLOR-CARD-EVALUATION: hsl(241, 100%, 89%);
+  --FONT-COLOR-SUMMARY-TITLE: hsl(224, 30%, 27%);
+  --FONT-COLOR-SUMMARY-NAME-1: hsl(0, 100%, 67%);
+  --FONT-COLOR-SUMMARY-NAME-2: hsl(39, 100%, 56%);
+  --FONT-COLOR-SUMMARY-NAME-3: hsl(166, 100%, 37%);
+  --FONT-COLOR-SUMMARY-NAME-4: hsl(234, 85%, 45%);
+  --FONT-COLOR-SUMMARY-RESULT: hsl(224, 30%, 27%);
+  --FONT-COLOR-SUMMARY-SPAN: hsla(224, 30%, 27%, 0.6);
+  --FONT-COLOR-SUMMARY-CTA: #fff;
+  --BG-IMAGE-CARD-HEADER-COLOR-1: hsl(252, 100%, 67%);
+  --BG-IMAGE-CARD-HEADER-COLOR-2: hsl(241, 81%, 54%);
+  --BG-IMAGE-CARD-RESULT-COLOR-1: hsla(256, 72%, 46%, 1);
+  --BG-IMAGE-CARD-RESULT-COLOR-2: hsla(241, 72%, 46%, 1);
+  --BG-IMAGE-CARD-RESULT-COLOR-3: hsla(256, 72%, 46%, 0);
+  --BG-IMAGE-SUMMARY-CTA-COLOR-1: hsl(252, 100%, 67%);
+  --BG-IMAGE-SUMMARY-CTA-COLOR-2: hsl(241, 81%, 54%);
+  --SHADOW-COLOR-CARD: hsla(241, 81%, 54%, 0.1);
+
+  /* GRADIENTS */
+  --BG-IMAGE-CARD-HEADER: linear-gradient(
+    var(--BG-IMAGE-CARD-HEADER-COLOR-1),
+    var(--BG-IMAGE-CARD-HEADER-COLOR-2)
+  );
+  --BG-IMAGE-CARD-RESULT: linear-gradient(
+    var(--BG-IMAGE-CARD-RESULT-COLOR-1),
+    var(--BG-IMAGE-CARD-RESULT-COLOR-2),
+    var(--BG-IMAGE-CARD-RESULT-COLOR-3)
+  );
+  --BG-IMAGE-SUMMARY-CTA: linear-gradient(
+    var(--BG-IMAGE-SUMMARY-CTA-COLOR-1),
+    var(--BG-IMAGE-SUMMARY-CTA-COLOR-2)
+  );
+
+  /* SHADOWS */
+  --BOX-SHADOW-CARD: 0 0 50px var(--SHADOW-COLOR-CARD);
+}
+
+/* || MEDIA QUERY (DARK THEME) */
+/* CHANGE THE DATA BELOW AS NEEDED */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --BGCOLOR: hsl(230, 17%, 12%);
+    --BGCOLOR-SUMMARY: hsl(228, 28%, 20%);
+    --BGCOLOR-CARD-AFTER: hsl(228, 28%, 20%);
+    --BGCOLOR-SUMMARY-LIST-1: hsla(0, 100%, 67%, 0.1);
+    --BGCOLOR-SUMMARY-LIST-2: hsla(39, 100%, 56%, 0.1);
+    --BGCOLOR-SUMMARY-LIST-3: hsla(166, 100%, 37%, 0.1);
+    --BGCOLOR-SUMMARY-LIST-4: hsla(234, 85%, 45%, 0.1);
+    --BGCOLOR-SUMMARY-CTA: hsl(241, 63%, 45%);
+    --FONT-COLOR: hsl(0, 0%, 100%);
+    --FONT-COLOR-CARD-TITLE: hsl(241, 100%, 89%);
+    --FONT-COLOR-CARD-RATING: #fff;
+    --FONT-COLOR-CARD-SPAN: hsl(241, 100%, 89%);
+    --FONT-COLOR-CARD-PERFORMANCE: #fff;
+    --FONT-COLOR-CARD-EVALUATION: hsl(241, 100%, 89%);
+    --FONT-COLOR-SUMMARY-TITLE: hsl(0, 0%, 100%);
+    --FONT-COLOR-SUMMARY-NAME-1: hsl(0, 100%, 67%);
+    --FONT-COLOR-SUMMARY-NAME-2: hsl(39, 100%, 56%);
+    --FONT-COLOR-SUMMARY-NAME-3: hsl(166, 100%, 37%);
+    --FONT-COLOR-SUMMARY-NAME-4: hsl(234, 85%, 45%);
+    --FONT-COLOR-SUMMARY-RESULT: hsl(0, 0%, 100%);
+    --FONT-COLOR-SUMMARY-SPAN: hsla(0, 0%, 100%, 0.6);
+    --FONT-COLOR-SUMMARY-CTA: #fff;
+    --SHADOW-COLOR-CARD: hsla(0, 0%, 0%, 0.4);
+    --BG-IMAGE-CARD-HEADER-COLOR-1: hsl(252, 100%, 67%);
+    --BG-IMAGE-CARD-HEADER-COLOR-2: hsl(241, 81%, 54%);
+    --BG-IMAGE-CARD-RESULT-COLOR-1: hsla(256, 72%, 46%, 1);
+    --BG-IMAGE-CARD-RESULT-COLOR-2: hsla(241, 72%, 46%, 1);
+    --BG-IMAGE-CARD-RESULT-COLOR-3: hsla(256, 72%, 46%, 0);
+    --BG-IMAGE-SUMMARY-CTA-COLOR-1: hsl(252, 100%, 67%);
+    --BG-IMAGE-SUMMARY-CTA-COLOR-2: hsl(241, 81%, 54%);
+  }
+}
+
+/* || UTILITY CLASSES */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+/* || GENERAL STYLES */
+html {
+  font-size: var(--FS);
+  font-family: var(--FF);
+  font-weight: 500;
+  background-color: var(--BGCOLOR);
+}
+
+body {
+  color: var(--FONT-COLOR);
+  min-height: 100vh;
+}
+
+/* || MAIN */
+.main {
+  min-height: 100vh;
+}
+
+.main__container {
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--BOX-SHADOW-CARD);
+}
+
+.card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 32px;
+  background-color: var(--BGCOLOR-CARD-AFTER);
+}
+
+.card__header {
+  background-image: var(--BG-IMAGE-CARD-HEADER);
+  border-radius: 0 0 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5em 3em 2.5em;
+  position: relative;
+  z-index: 10;
+}
+
+.card__title {
+  color: var(--FONT-COLOR-CARD-TITLE);
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+  margin-bottom: 1.3em;
+}
+
+.card__result {
+  background-image: var(--BG-IMAGE-CARD-RESULT);
+  border-radius: 100px;
+  padding: 1.5rem 2.4rem 2.5rem;
+  position: relative;
+  margin-bottom: 1.75em;
+}
+
+.card__rating {
+  color: var(--FONT-COLOR-CARD-RATING);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
+}
+
+.card__span {
+  color: var(--FONT-COLOR-CARD-SPAN);
+  font-weight: 700;
+  font-size: 1rem;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.card__performance {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.6px;
+  color: var(--FONT-COLOR-CARD-PERFORMANCE);
+  margin-bottom: 0.4em;
+}
+
+.card__evaluation {
+  color: var(--FONT-COLOR-CARD-EVALUATION);
+}
+
+.summary {
+  background-color: var(--BGCOLOR-SUMMARY);
+  padding-top: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1.75em;
+  position: relative;
+  z-index: 10;
+}
+
+.summary__title {
+  color: var(--FONT-COLOR-SUMMARY-TITLE);
+  font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+  margin-bottom: 1.25em;
+}
+
+.summary__report {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.125em;
+  margin-bottom: 1.5em;
+}
+
+.summary__list {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.05em 0.9em;
+}
+
+.summary__list:hover {
+  transform: scale(1.05);
+}
+
+.summary__list:nth-child(1) {
+  background-color: var(--BGCOLOR-SUMMARY-LIST-1);
+}
+
+.summary__list:nth-child(1) .summary__name {
+  color: var(--FONT-COLOR-SUMMARY-NAME-1);
+}
+
+.summary__list:nth-child(2) {
+  background-color: var(--BGCOLOR-SUMMARY-LIST-2);
+}
+
+.summary__list:nth-child(2) .summary__name {
+  color: var(--FONT-COLOR-SUMMARY-NAME-2);
+}
+
+.summary__list:nth-child(3) {
+  background-color: var(--BGCOLOR-SUMMARY-LIST-3);
+}
+
+.summary__list:nth-child(3) .summary__name {
+  color: var(--FONT-COLOR-SUMMARY-NAME-3);
+}
+
+.summary__list:nth-child(4) {
+  background-color: var(--BGCOLOR-SUMMARY-LIST-4);
+}
+
+.summary__list:nth-child(4) .summary__name {
+  color: var(--FONT-COLOR-SUMMARY-NAME-4);
+}
+
+.summary__category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+}
+
+.summary__result {
+  font-weight: 800;
+  word-spacing: 1.6px;
+  color: var(--FONT-COLOR-SUMMARY-RESULT);
+}
+
+.summary__span {
+  font-weight: 500;
+  color: var(--FONT-COLOR-SUMMARY-SPAN);
+}
+
+.summary__cta {
+  text-align: center;
+  font-weight: 700;
+  padding: 1em;
+  width: 100%;
+  border-radius: 100px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: var(--BGCOLOR-SUMMARY-CTA);
+  color: var(--FONT-COLOR-SUMMARY-CTA);
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  outline-offset: 5px;
+}
+
+.summary__cta span {
+  position: relative;
+  z-index: 10;
+}
+
+.summary__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--BG-IMAGE-SUMMARY-CTA);
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 100px;
+  opacity: 0;
+}
+
+.summary__cta:hover::before,
+.summary__cta:focus-visible::before {
+  opacity: 1;
+}
+
+/* || MEDIA QUERY (DEVICE WIDTH) */
+@media screen and (min-width: 48rem) {
+  /* || MAIN */
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__container {
+    padding: 1em;
+  }
+
+  .card {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 46rem;
+    border-radius: 32px;
+  }
+
+  .card__header {
+    border-radius: 32px;
+    padding: 2.5em 4em 3.25em;
+    flex: 50%;
+  }
+
+  .card__title {
+    letter-spacing: 1px;
+    margin-bottom: 1.75em;
+  }
+
+  .card__result {
+    padding: 3.5rem;
+    margin-bottom: 2.75em;
+  }
+
+  .card__rating {
+    line-height: 1;
+  }
+
+  .card__span {
+    font-size: 1.125rem;
+  }
+
+  .card__performance {
+    font-size: 1.4rem;
+    font-size: 1.9rem;
+    letter-spacing: 0.6px;
+    margin-bottom: 0.45em;
+  }
+
+  .card__evaluation {
+    font-size: 1.05rem;
+    letter-spacing: 0.39px;
+    line-height: 1.45;
+  }
+
+  .summary {
+    padding-top: 2.5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    padding-bottom: 1.75em;
+    flex: 50%;
+    border-radius: 0 32px 32px 0;
+  }
+
+  .summary__title {
+    font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+    margin-bottom: 1em;
+  }
+
+  .summary__report {
+    gap: 0.95em;
+    margin-bottom: 2.55em;
+  }
+
+  .summary__list {
+    padding: 0.95em 0.9em;
+  }
+
+  .summary__name {
+    font-weight: 700;
+    font-size: 1.15rem;
+  }
+
+  .summary__result {
+    font-size: 1.25rem;
+    word-spacing: 0;
+  }
+}
+
+/* || MEDIA QUERY (REDUCED MOTION) */
+/* CHANGE THE DATA BELOW AS NEEDED */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .summary__cta::before {
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  html,
+  .summary,
+  .card::after,
+  .summary__list,
+  .card__title,
+  .card__rating,
+  .card__span,
+  .card__performance,
+  .card__evaluation,
+  .summary__title,
+  .summary__name,
+  .summary__result,
+  .summary__span,
+  .card__header,
+  .card__result,
+  .summary__cta {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation: none !important;
+
+    transition-duration: 0.001ms !important;
+    transition-delay: 0.001ms !important;
+    transition: none !important;
+
+    caret-color: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}

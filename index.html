@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results Summary Component</title>
+    <meta name="author" content="Elmar Chavez" />
+    <meta name="description"
+        content="A clean and responsive results summary component built with HTML and CSS. Developed in my third month of learning frontend development as part of a Frontend Mentor challenge." />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png" />
+    <meta property="og:site_name" content="CodingWithJiro" />
+    <meta property="og:title" content="Results Summary Component" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+        content="A clean and responsive results summary component built with HTML and CSS. Created during my 3rd month of learning frontend development as part of a Frontend Mentor challenge." />
+
+    <meta property="og:url" content="ADD_LINK_HERE" />
+
+    <meta property="og:image" content="ADD_LINK_HERE/assets/img/site-preview-meta_1200x630.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Results Summary Component" />
+    <meta name="twitter:description"
+        content="Responsive results summary built with #HTML & #CSS. A #FrontendMentor challenge from my 3rd month learning #FrontendDev." />
+
+    <meta name="twitter:image" content="ADD_LINK_HERE/assets/img/site-preview-meta_1200x630.png" />
+
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ebf1ff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191b24" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <header class="header" role="banner">
+        <a class="sr-only" href="#main" aria-label="Skip to main.">
+            Go directly to the main content of the site.
+        </a>
+    </header>
+
+    <main class="main" id="main">
+        <div class="main__container">
+            <section class="card">
+                <header class="card__header">
+                    <h1 class="card__title">
+                        Your Result
+                    </h1>
+
+                    <div class="card__result">
+                        <p class="card__rating">76</p>
+
+                        <span class="card__span">of 100</span>
+                    </div>
+
+                    <h2 class="card__performance">
+                        Great
+                    </h2>
+
+                    <p class="card__evaluation">
+                        You scored higher than 65% of the people who have taken these tests.
+                    </p>
+                </header>
+
+                <section class="summary">
+                    <h2 class="summary__title">
+                        Summary
+                    </h2>
+
+                    <ul class="summary__report">
+                        <li class="summary__list">
+                            <div class="summary__category">
+                                <img src="./assets/icons/icon-reaction_20x20.svg" alt="" class="summary__icon"
+                                    width="20" height="20" aria-hidden="true">
+
+                                <p class="summary__name">
+                                    Reaction
+                                </p>
+                            </div>
+
+                            <p class="summary__result">
+                                80 <span class="summary__span">/ 100</span>
+                            </p>
+                        </li>
+
+                        <li class="summary__list">
+                            <div class="summary__category">
+                                <img src="./assets/icons/icon-memory_20x20.svg" alt="" class="summary__icon" width="20"
+                                    height="20" aria-hidden="true">
+
+                                <p class="summary__name">
+                                    Memory
+                                </p>
+                            </div>
+
+                            <p class="summary__result">
+                                92 <span class="summary__span">/ 100</span>
+                            </p>
+                        </li>
+
+                        <li class="summary__list">
+                            <div class="summary__category">
+                                <img src="./assets/icons/icon-verbal_20x20.svg" alt="" class="summary__icon" width="20"
+                                    height="20" aria-hidden="true">
+
+                                <p class="summary__name">
+                                    Verbal
+                                </p>
+                            </div>
+
+                            <p class="summary__result">
+                                61 <span class="summary__span">/ 100</span>
+                            </p>
+                        </li>
+
+                        <li class="summary__list">
+                            <div class="summary__category">
+                                <img src="./assets/icons/icon-visual_20x20.svg" alt="" class="summary__icon" width="20"
+                                    height="20" aria-hidden="true">
+
+                                <p class="summary__name">
+                                    Visual
+                                </p>
+                            </div>
+
+                            <p class="summary__result">
+                                73 <span class="summary__span">/ 100</span>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="summary__cta" aria-label="Continue to your next result.">
+                        <span>Continue</span>
+                    </button>
+                </section>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
