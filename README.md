@@ -19,6 +19,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f00f4e4d-9046-433b-b347-da61f1c68918/deploy-status)](https://results-summary-component-fm-jiro.netlify.app/)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Learning Path](https://img.shields.io/badge/learning%20path-month%203-blue)
+![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.frontend-mentor-results-summary-component&left_text=repo%20views)
 
 ## ℹ️ A Responsive Results Summary Component for a Test Result
 
